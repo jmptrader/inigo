@@ -1,14 +1,16 @@
 # Inigo
-A lightweight service management tool written in Go.
+A lightweight init-style service management tool written in Go.
 
 # Features
 * Works independently in user home directory.
-* Save current service list to file for easy loading/unloading different sets of services.
+* Save current service list to a new file for easy loading/unloading sets of services.
+* Utilizes a Unix socket server. Includes a built-in client for managing services.
 * Reboot all services with a single command.
 
 #### Notes:
 - All working files reside in the HOME/.inigo directory unless otherwise specified (save/load).
-- Current services are automatically saved to default services file (~/.inigo/services) on every add, remove, enable, and disable.
+- Current services are automatically saved to default 'services' file every add, remove, enable, and disable.
+- Service output is logged to ~/.inigo directory in a file named with the corresponding service name.
 
 # Examples
 
