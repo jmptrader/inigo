@@ -147,7 +147,7 @@ func start(name string) error {
 func stop(name string) error {
 	if serving(name) {
 		if running(name) {
-			procs[name].cmd.Process.Kill()
+			procs[name].cmd.Process.Signal(os.Interrupt)
 			delete(procs, name)
 			return nil
 		} else {
